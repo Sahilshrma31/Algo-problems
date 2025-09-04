@@ -1,3 +1,4 @@
+package bfs.dfs;
 /*
 LeetCode 547. Number of Provinces (Medium)
 

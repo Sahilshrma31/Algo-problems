@@ -1,3 +1,4 @@
+package bfs.dfs;
 /*
 LeetCode 994. Rotting Oranges
 
