@@ -78,7 +78,6 @@ class Solution {
                 return "";
             }
         }
-
         // Step 3: Compute indegree
         int[] indegree = new int[K];
         for (int i = 0; i < K; i++) {
@@ -86,14 +85,13 @@ class Solution {
                 indegree[v]++;
             }
         }
-
         // Step 4: Kahn’s BFS Topological Sort
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < K; i++) {
             if (indegree[i] == 0) {
                 q.add(i);
             }
-        }
+        } 
 
         StringBuilder sb = new StringBuilder();
         while (!q.isEmpty()) {
