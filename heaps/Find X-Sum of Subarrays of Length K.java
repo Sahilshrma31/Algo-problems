@@ -159,3 +159,34 @@ class FindXSumOptimized {
        Space: O(m)
    ==========================================================
 */
+
+// 🧩 Brute Force vs Optimized (Sliding Window) — Short Notes
+// 🔹 Brute Force Approach
+
+// Rebuild frequency map and heap for every window of size k.
+
+// No reuse of previous work.
+
+// Time Complexity: O(n × k log k)
+
+// Space Complexity: O(k)
+
+// 🔸 Logic: For each window → count freq → sort or heapify → take top x.
+
+// 🔹 Optimized Sliding Window Approach
+
+// Maintain a running frequency map.
+
+// When window slides:
+
+// Remove outgoing element → O(1)
+
+// Add incoming element → O(1)
+
+// Compute sum using heap of only unique elements (m ≤ k).
+
+// Time Complexity: O(n × log m)
+
+// Space Complexity: O(k)
+
+// 🔸 Logic: Incremental update instead of full recomputation → less redundant work.
