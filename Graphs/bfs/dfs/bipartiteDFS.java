@@ -36,42 +36,44 @@ Space Complexity:
 - O(V) for color array + recursion stack.
 
 */
-
+import java.util.*;
 class Solution {
 
-    public boolean isBipartite(int[][] graph) {
-        int n = graph.length;
-        int[] color = new int[n]; // 0 = unvisited, 1 or -1 = color
+    private boolean dfs(int node, int col, int[] color,
+                        ArrayList<ArrayList<Integer>> adj) {
 
-        // Check each component
-        for (int i = 0; i < n; i++) {
-            if (color[i] == 0 && !dfs(graph, color, i, 1)) {
+        color[node] = col;
+
+        for (int it : adj.get(node)) {
+
+            // not colored yet
+            if (color[it] == 0) {
+                if (!dfs(it, -col, color, adj)) { //  toggle
+                    return false;
+                }
+            }
+            // conflict found
+            else if (color[it] == col) {
                 return false;
             }
         }
         return true;
     }
 
-    private boolean dfs(int[][] graph, int[] color, int node, int c) {
-        color[node] = c;
+    public boolean isBipartite(int V,
+                               ArrayList<ArrayList<Integer>> adj) {
 
-        for (int neighbor : graph[node]) {
-            if (color[neighbor] == 0) {
-                if (!dfs(graph, color, neighbor, -c)) return false;
-            } else if (color[neighbor] == c) {
-                return false; // conflict detected
+        int[] color = new int[V]; // 0 = unvisited, 1 / -1 = colors
+
+        // check all components
+        for (int i = 0; i < V; i++) {
+            if (color[i] == 0) {
+                if (!dfs(i, 1, color, adj)) {
+                    return false;
+                }
             }
         }
         return true;
     }
-
-    // Example usage
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        int[][] graph1 = {{1,3},{0,2},{1,3},{0,2}};
-        System.out.println("Graph1 is bipartite? " + sol.isBipartite(graph1)); // true
-
-        int[][] graph2 = {{1,2,3},{0,2},{0,1,3},{0,2}};
-        System.out.println("Graph2 is bipartite? " + sol.isBipartite(graph2)); // false
-    }
 }
+
