@@ -27,7 +27,7 @@ Do tasks without dependencies first, then unlock dependent tasks.
 3. Push all nodes with in-degree = 0 into a queue.
 4. While queue not empty:
    - Pop a node, add it to topo order.
-   - Decrease in-degree of its neighbors.
+   - Decrease in-degree of its neighbors.`
    - If neighbor’s in-degree becomes 0, push it to queue.
 5. At the end:
    - If topo order has all V nodes → valid topo sort.
