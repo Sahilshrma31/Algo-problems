@@ -22,7 +22,7 @@ This is a classic **Unbounded Knapsack / Coin Change** problem:
 1️⃣ Recursion (Brute Force)  
 2️⃣ Recursion + Memoization (Top-Down DP)  
 3️⃣ Tabulation (2D DP)  
-4️⃣ Space Optimized DP (1D DP)  ✅ BEST
+4️⃣ Space Optimized DP (1D DP)   BEST
 
 ====================================================
 */
@@ -33,7 +33,7 @@ class Solution {
 
     /*
     ====================================================
-    1️⃣ RECURSION (Brute Force) ❌ TLE
+    1️⃣ RECURSION (Brute Force)  TLE
     ====================================================
     Time Complexity: Exponential
     Space Complexity: O(n) recursion stack
@@ -131,7 +131,7 @@ class Solution {
 
     /*
     ====================================================
-    4️⃣ SPACE OPTIMIZED DP (1D) ✅ BEST
+    4️⃣ SPACE OPTIMIZED DP (1D)  BEST
     ====================================================
     Time Complexity: O(n * √n)
     Space Complexity: O(n)
@@ -155,7 +155,7 @@ class Solution {
 
     /*
     ====================================================
-    🚀 MAIN FUNCTION (LeetCode Expected)
+     MAIN FUNCTION (LeetCode Expected)
     ====================================================
     */
 
